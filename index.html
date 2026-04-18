@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Online Store Management System</h1>
+
+    <!-- PRODUCTS -->
+    <section>
+      <h2>Add Product</h2>
+      <input type="text" id="productName" placeholder="Product Name" />
+      <input type="number" id="price" placeholder="Price" />
+      <input type="number" id="stock" placeholder="Stock" />
+      <button onclick="addProduct()">Add Product</button>
+    </section>
+
+    <section>
+      <h2>Products</h2>
+      <ul id="productsList"></ul>
+    </section>
+
+    <!-- CUSTOMERS -->
+    <section>
+      <h2>Add Customer</h2>
+      <input type="text" id="customerName" placeholder="Customer Name" />
+      <input type="email" id="customerEmail" placeholder="Email" />
+      <button onclick="addCustomer()">Add Customer</button>
+    </section>
+
+    <section>
+      <h2>Customers</h2>
+      <ul id="customersList"></ul>
+    </section>
+
+    <!-- CREATE ORDER -->
+    <section>
+      <h2>Create Order</h2>
+
+      <label>Customer:</label>
+      <select id="orderCustomerId"></select>
+
+      <label>Product:</label>
+      <select id="orderProductId" onchange="updateStockInfo()"></select>
+
+      <p id="stockInfo"></p>
+
+      <input type="number" id="quantity" placeholder="Quantity" min="1" />
+      <button onclick="createOrder()">Create Order</button>
+    </section>
+
+    <section>
+      <h2>Orders</h2>
+      <ul id="ordersList"></ul>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
